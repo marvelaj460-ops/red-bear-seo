@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
+    text-align: center;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.red-bear-image {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    max-width: 650px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.coming-soon {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}

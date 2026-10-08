@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://marvelaj460-opts.github.io/red-bear%20seo/sitemap.xml
+Sitemap: https://marvelaj460-ops.github.io/red-bear-seo/sitemap.xml

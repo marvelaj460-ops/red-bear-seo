@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Bear | Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="red.jpg" alt="Red Bear" class="logo">
+    </header>
+
+    <main>
+        <img src="red.jpg" alt="Red Bear" class="red-bear-image">
+
+        <h1>RED BEAR</h1>
+
+        <h2>Something energetic is about to land on your table.</h2>
+
+        <p>COMING SOON</p>
+    </main>
+
+    <footer>
+        <p>© 2026 Red Bear. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

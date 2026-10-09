@@ -1,46 +1,128 @@
+/* RED BEAR — Responsive Website Design */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: white;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111111;
+    color: #ffffff;
     text-align: center;
+    overflow-x: hidden;
 }
 
 main {
+    width: 100%;
+    max-width: 1100px;
     min-height: 100vh;
+    min-height: 100svh;
+    margin: 0 auto;
+    padding: clamp(20px, 5vh, 56px) clamp(14px, 4vw, 36px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px 20px;
+    gap: 0;
 }
 
 .red-bear-image {
-    width: 90%;
-    max-width: 500px;
+    display: block;
+    width: 100%;
+    max-width: 360px;
     height: auto;
-    margin-bottom: 30px;
+    max-height: 48svh;
+    object-fit: contain;
+    margin: 0 auto 24px;
 }
 
 h1 {
-    font-size: 48px;
-    margin-bottom: 15px;
+    width: 100%;
+    font-size: clamp(30px, 7vw, 54px);
+    line-height: 1.12;
+    overflow-wrap: break-word;
+    margin-bottom: 16px;
+    letter-spacing: 1px;
 }
 
 h2 {
-    font-size: 24px;
-    max-width: 650px;
-    line-height: 1.4;
-    margin-bottom: 25px;
+    width: 100%;
+    max-width: 600px;
+    font-size: clamp(17px, 4vw, 24px);
+    line-height: 1.5;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    margin-bottom: 24px;
 }
 
 .coming-soon {
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 4px;
+    max-width: 100%;
+    font-size: clamp(14px, 3.5vw, 20px);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: clamp(1px, 0.5vw, 4px);
+    overflow-wrap: anywhere;
+}
+
+/* Extra adjustments for very small phones */
+@media (max-width: 360px) {
+    main {
+        padding: 18px 12px;
+    }
+
+    .red-bear-image {
+        max-width: 280px;
+        max-height: 42svh;
+        margin-bottom: 18px;
+    }
+
+    h1 {
+        font-size: 29px;
+        letter-spacing: 0;
+        margin-bottom: 12px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 18px;
+    }
+
+    .coming-soon {
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Short screens and landscape phones */
+@media (max-height: 500px) {
+    main {
+        min-height: 100svh;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .red-bear-image {
+        max-height: 35svh;
+        margin-bottom: 12px;
+    }
+
+    h1 {
+        margin-bottom: 8px;
+    }
+
+    h2 {
+        margin-bottom: 12px;
+    }
 }

@@ -253,8 +253,8 @@ footer p {
     }
 .bear-image {
   width: 100%;
-  max-width: 350px;
-  height: auto;
+  max-width: 150px;
+  height: 200px;
   object-fit: contain;
   display: block;
   margin: 0 auto;

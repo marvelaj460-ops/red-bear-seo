@@ -1,3 +1,25 @@
+:root {
+    --bg: #101010;          /* page background            */
+    --bg-dark: #080808;     /* header + footer background  */
+    --band: #191919;        /* shaded section background   */
+    --card: #1c1c1c;        /* value card background       */
+    --tile: #242424;        /* audience tile background    */
+
+    --white: #ffffff;
+    --text-soft: #dddddd;
+    --text-mid: #cccccc;
+    --text-dim: #aaaaaa;
+
+    --red: #ed1c24;         /* main brand red              */
+    --red-bright: #ff3038;  /* headings / eyebrow red      */
+    --red-deep: #e51b23;    /* header rule                 */
+    --red-glow: #e51b2355;  /* disc glow (last 2 = opacity)*/
+
+    --border: #3a3a3a;
+    --tile-border: #454545;
+}
+
+/* ---------- 2. Base ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -10,22 +32,23 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: #101010;
-    color: #ffffff;
+    background: var(--bg);
+    color: var(--white);
     line-height: 1.7;
 }
 
+/* ---------- 3. Header & navigation ---------- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 22px 8%;
-    background: #080808;
-    border-bottom: 2px solid #e51b23;
+    background: var(--bg-dark);
+    border-bottom: 2px solid var(--red-deep);
 }
 
 .brand {
-    color: #ffffff;
+    color: var(--white);
     font-size: 27px;
     font-weight: 900;
     letter-spacing: 2px;
@@ -33,7 +56,7 @@ body {
 }
 
 .brand span {
-    color: #ed1c24;
+    color: var(--red);
 }
 
 nav {
@@ -42,16 +65,17 @@ nav {
 }
 
 nav a {
-    color: #ffffff;
+    color: var(--white);
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
 
 nav a:hover {
-    color: #ed1c24;
+    color: var(--red);
 }
 
+/* ---------- 4. Hero ---------- */
 .hero {
     min-height: 580px;
     display: flex;
@@ -68,7 +92,7 @@ nav a:hover {
 }
 
 .eyebrow {
-    color: #ff3038;
+    color: var(--red-bright);
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 4px;
@@ -83,7 +107,7 @@ h1 {
 }
 
 .intro {
-    color: #dddddd;
+    color: var(--text-soft);
     font-size: 17px;
     max-width: 550px;
     margin-bottom: 32px;
@@ -91,8 +115,8 @@ h1 {
 
 .button {
     display: inline-block;
-    background: #ed1c24;
-    color: #ffffff;
+    background: var(--red);
+    color: var(--white);
     padding: 14px 25px;
     text-decoration: none;
     font-size: 13px;
@@ -101,24 +125,28 @@ h1 {
 }
 
 .button:hover {
-    background: #ffffff;
-    color: #ed1c24;
+    background: var(--white);
+    color: var(--red);
 }
 
+/* Bear artwork: the red disc, and the product photo when you use one. */
 .bear-art {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .bear-circle {
     width: 310px;
     height: 310px;
+    padding: 20px;
     border-radius: 50%;
     background: radial-gradient(circle, #f13b40, #920d15 65%, #35090c);
     border: 5px solid #ff454b;
-    box-shadow: 0 0 50px #e51b2355;
+    box-shadow: 0 0 50px var(--red-glow);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,6 +171,16 @@ h1 {
     margin-top: 5px;
 }
 
+.bear-image {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    height: 240px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+/* ---------- 5. Sections ---------- */
 .section {
     padding: 85px 8%;
     text-align: center;
@@ -157,9 +195,10 @@ h1 {
 .section > p:not(.eyebrow) {
     max-width: 780px;
     margin: 0 auto 35px;
-    color: #cccccc;
+    color: var(--text-mid);
 }
 
+/* ---------- 6. Values cards ---------- */
 .values {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -168,24 +207,25 @@ h1 {
 }
 
 .values article {
-    background: #1c1c1c;
-    border: 1px solid #3a3a3a;
-    border-top: 4px solid #ed1c24;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--red);
     padding: 30px 20px;
     border-radius: 6px;
 }
 
 .values h3 {
-    color: #ff3038;
+    color: var(--red-bright);
     margin-bottom: 12px;
 }
 
 .values p {
-    color: #cccccc;
+    color: var(--text-mid);
 }
 
+/* ---------- 7. Audience grid ---------- */
 .audience {
-    background: #191919;
+    background: var(--band);
 }
 
 .audience-grid {
@@ -198,31 +238,43 @@ h1 {
 
 .audience-grid div {
     padding: 25px 15px;
-    background: #242424;
-    border: 1px solid #454545;
+    background: var(--tile);
+    border: 1px solid var(--tile-border);
     border-radius: 5px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
 .audience-grid div:hover {
-    background: #ed1c24;
-    border-color: #ed1c24;
+    background: var(--red);
+    border-color: var(--red);
 }
 
+/* ---------- 8. Footer ---------- */
 footer {
     text-align: center;
     padding: 35px 20px;
-    background: #080808;
-    border-top: 2px solid #ed1c24;
+    background: var(--bg-dark);
+    border-top: 2px solid var(--red);
 }
 
 footer p {
-    color: #aaaaaa;
+    color: var(--text-dim);
     font-size: 13px;
     margin-top: 8px;
 }
 
+/* ---------- 9. Smaller screens ---------- */
+
+/* Slightly wider phones: keep the product photo compact. */
+@media (max-width: 768px) {
+    .bear-image {
+        max-width: 200px;
+        max-height: 280px;
+    }
+}
+
+/* Phones: stack the header, hero and both card grids. */
 @media (max-width: 700px) {
     .header {
         flex-direction: column;
@@ -251,32 +303,26 @@ footer p {
         width: 250px;
         height: 250px;
     }
-.bear-image {
-width: 100%;
-max-width: 180px;
-height: 240px;
-object-fit: contain;
-display: block;
-margin: 0 auto;
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .audience-grid {
+        grid-template-columns: 1fr;
+    }
 }
-.bear-circle {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 20px;
+
+/* ---------- 10. Respect reduced-motion settings ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
 }
-.bear-art {
-display: flex;
-justify-content: center;
-align-items: center;
-min-width: 0;
-overflow: hidden;
-}
-@media (max-width: 768px) {
-.bear-image {
-max-width: 200px;
-max-height: 280px;
-}
-}
-   
